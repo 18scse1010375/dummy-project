@@ -1,0 +1,138 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+int k=0,answer=0 ;
+void add()
+{
+int a,b;
+if(k==0)
+{
+printf("Enter two number:");
+scanf("%d%d",&a,&b);
+answer=a+b;
+printf("addition=%d",answer);
+k=1;
+}
+else
+{
+printf("enter one number:");
+scanf("%d",&a);
+answer=answer+a;
+printf("%d",answer);
+k=1;
+}
+}
+void clear()
+{
+k=0;
+answer=0;
+}
+void subtract()
+{
+int a,b;
+if(k==0)
+{
+printf("Enter two number:");
+scanf("%d%d",&a,&b);
+answer=a-b;
+printf("addition=%d",answer);
+k=1;
+}
+else
+{
+printf("enter one number:");
+scanf("%d",&a);
+answer=answer-a;
+printf("%d",answer);
+k=1;
+}
+}
+void mult()
+{
+int a,b;
+if(k==0)
+{
+printf("Enter two number:");
+scanf("%d%d",&a,&b);
+answer=a*b;
+printf("addition=%d",answer);
+k=1;
+}
+else
+{
+printf("enter one number:");
+scanf("%d",&a);
+answer=answer*a;
+printf("%d",answer);
+k=1;
+}
+}
+void rem()
+{
+int a,b;
+if(k==0)
+{
+printf("Enter two number:");
+scanf("%d%d",&a,&b);
+answer=a%b;
+printf("addition=%d",answer);
+k=1;
+}
+else
+{
+printf("enter one number:");
+scanf("%d",&a);
+answer=answer%a;
+printf("%d",answer);
+k=1;
+}
+}
+int menu()
+{
+int ch;
+printf("\n\n1:add\n");
+printf("2:subtract\n");
+printf("3:clear\n");
+printf("4:mult\n");
+printf("5:remainder\n");
+printf("6:exit\n");
+printf("\n\tEnter your choice:");
+scanf("%d",&ch);
+return(ch);
+}
+void main()
+{
+clrscr();
+while(1)
+{
+clrscr();
+printf("\nanswer=%d",answer);
+switch(menu())
+{
+case 1:
+{
+add();
+break;
+}
+case 2:
+  subtract();
+    break;
+case 3:
+clear();
+break;
+case 4:
+mult();
+break;
+case 5:
+rem();
+break;
+case 6:
+{
+exit(0);
+break;
+}
+}
+getch();
+}
+}
+
