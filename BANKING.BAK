@@ -1,0 +1,97 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+int total_amount=1000;
+int deposit_amount=0,withdraw_amount=0,transfer_amount=0;
+void deposit()
+{
+int amount;
+printf("How money yow want to deposit:\n");
+scanf("%d",&amount);
+total_amount=total_amount+amount;
+deposit_amount=deposit_amount+amount;
+}
+void withdraw()
+{
+int amount;
+printf("How money you want to withdraw:\n");
+scanf("%d",&amount);
+if(total_amount>=amount)
+{
+total_amount=total_amount-amount;
+withdraw_amount=withdraw_amount+amount;
+}
+else
+printf("Your Account balance is not sufficient\n");
+}
+void transfer()
+{
+int tr;
+printf("How much money you want to transfer:");
+scanf("%d",&tr);
+if(tr<=total_amount)
+{
+total_amount=total_amount-tr;
+transfer_amount=transfer_amount+tr;
+}
+else
+printf("Your Account balance is not sufficient\n");
+}
+void check_detail()
+{
+
+printf("\nYour Account balance= %d\n",total_amount);
+printf("Total Deposit Ammount=%d\n",deposit_amount);
+printf("Total Withdraw amount=%d\n",withdraw_amount);
+printf("Total Transfer Amount=%d\n",transfer_amount);
+}
+int menu()
+{
+printf("\n1:Deposit\n");
+printf("2:withdraw\n");
+printf("3:Transfer\n");
+printf("4:check_detail\n");
+printf("5:Exit\n");
+int ch;
+printf("Enter your choice:\n");
+scanf("%d",&ch);
+return(ch);
+}
+void main()
+{
+clrscr();
+char str[20];
+int account_no;
+printf("Enter your name:\n");
+gets(str);
+printf("Enter your account no.");
+scanf("%d",&account_no);
+while(1)
+{
+clrscr();
+switch(menu())
+{
+case 1:deposit();
+       break;
+case 2:withdraw();
+	 break;
+case 3:transfer();
+	  break;
+case 4:check_detail();
+   break;
+case 5:
+printf("\n\t*********\n\t");
+check_detail();
+printf("*******Thanks You****");
+getch();
+exit(0);
+	break;
+default:
+  printf("invalid choice");
+	break;
+}
+
+getch();
+}
+}
+
