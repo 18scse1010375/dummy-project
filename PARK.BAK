@@ -1,0 +1,84 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+int noc=0,nor=0,nob=0,count=0,amount=0;
+void cycle()
+{
+printf("Cycle Entry is successfull");
+noc++;
+count++;
+amount=amount+20;
+}
+void rikshaw()
+{
+printf("rikshaw Entry is successfull");
+nor++;
+count++;
+amount=amount+50;
+}
+void bus()
+{
+printf("bus Entry is successfull");
+nob++;
+count++;
+amount=amount+100;
+}
+void show_detail()
+{
+printf("total no. of cycle=%d\n",noc);
+printf("total no. of riksaw=%d\n",nor);
+printf("total no. of bus=%d\n",nob);
+printf("Total vehicle=%d",count);
+printf("total amount=%d",amount);
+}
+
+int menu()
+{
+int ch;
+printf("\n1:cycle");
+printf("\n2:riksaw");
+printf("\n3:bus");
+printf("\n4:check detail");
+printf("\n5:exit");
+printf("\n\nEnter your choice");
+scanf("%d",&ch);
+return(ch);
+}
+void main()
+{
+while(1)
+{
+clrscr();
+switch(menu())
+{
+case 1:
+{
+cycle();
+break;
+}
+case 2:
+{
+rikshaw();
+break;
+}
+case 3:
+{
+bus();
+break;
+}
+case 4:
+{
+show_detail();
+break;
+}
+case 5:
+     exit(0);
+     break;
+default:
+printf("Invalid choice");
+}
+getch();
+}
+}
+
+
